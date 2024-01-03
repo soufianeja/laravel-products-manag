@@ -36,7 +36,7 @@
                             <input type="text" class="form-control" id="price" name="price">
                         </div>
                         <div class="mb-3">
-                            <select name="category_id" id="category">
+                            <select class="form-select" aria-label="Default select example" name="category_id" id="category">
                                 @foreach ($categories as $category)
                                     <option value={{$category->id}}>{{$category->name}}</option>
                                 @endforeach

@@ -14,10 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Route::get('/add_product',[ProductController::class, 'add_product']);
 Route::get('/add_category',[ProductController::class, 'add_category']);
 Route::get('/show_products',[ProductController::class, 'show_products']);

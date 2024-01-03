@@ -13,9 +13,10 @@ class ProductController extends Controller
     }
 
     public function add_product(){
-        $categories = Product::with('category')->get();
+        $categories = Category::all();
         return view('products.add_product', compact('categories'));
     }
+
     public function store_category(Request $request){
         $request->validate([
             'name'=> 'required',
@@ -41,7 +42,7 @@ class ProductController extends Controller
     }
 
     public function show_products(){
-        $products = Product::all();
+        $products = Product::with('category')->get();
         return view('/products.show_products',compact('products'));
     }
 }
